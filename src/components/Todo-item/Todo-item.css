@@ -1,0 +1,43 @@
+.active {
+  text-align: center;
+  margin: 10px;
+  word-break: break-all;
+  border-radius: 2px;
+  cursor: pointer;
+  list-style-type: none;
+  background-color: rgb(105, 192, 255);
+}
+
+.active:hover {
+  transform: scale(1.05, 1.05);
+  background-color: rgb(175 222 255);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes strike {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 120%;
+  }
+}
+
+.strike {
+  position: relative;
+}
+
+.strike::after {
+  content: " ";
+  position: absolute;
+  top: 60%;
+  left: -10%;
+  width: 120%;
+  height: 3px;
+  background: black;
+  animation-name: strike;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
